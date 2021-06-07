@@ -10,6 +10,8 @@ print(df_imob.shape)
 # Verificar as colunas
 print(df_imob.columns)
 
+
+
 # 1. Manuseio de datas
 
 # Verificar qual tipo da coluna "Date"
@@ -93,3 +95,16 @@ print(df_imob.Address.str.upper()[:5])
 
 print(df_imob.Suburb[:5])
 print(df_imob.Suburb.str.capitalize()[:5])
+
+## Renomeando Coluna
+
+# Verificando as colunas antes da alteração de algumas selecionadas
+print(df_imob.columns)
+df_imob.rename(columns= {'Suburb': 'Suburbio',
+                         'Address': 'Endereco',
+                         'Rooms': 'Quantos',
+                         'Type': 'Tipo',
+                         'Propertycount': 'Contagem_de_propriedades'},
+               inplace=True)
+# Verificando as colunas alteração
+print(df_imob.columns)
